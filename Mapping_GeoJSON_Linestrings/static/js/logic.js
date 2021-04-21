@@ -83,7 +83,7 @@ attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap
 
 // Create a base layer that holds both maps.
 let baseMaps = {
-  Street: light,
+  Day: light,
   Dark: dark
 };
 
@@ -91,22 +91,29 @@ let baseMaps = {
 let map = L.map('mapid', {
   center: [44.0, -80.0],
   zoom: 2,
-  layers: [light]
+  layers: [dark]
 })
 
 // Pass our map layers into our layers control and add the layers control to the map.
 L.control.layers(baseMaps).addTo(map);
 
 // Accessing the airport GeoJSON URL
-let airportData = "https://raw.githubusercontent.com/npvandyke/Mapping_Earthquakes/main/majorAirports.json";
+//let airportData = "https://raw.githubusercontent.com/npvandyke/Mapping_Earthquakes/main/majorAirports.json";
+
+// Accessing the Toronto airline routes GeoJSON URL.
+let torontoData = "https://raw.githubusercontent.com/npvandyke/Mapping_Earthquakes/main/torontoRoutes.json";;
 
 // Grabbing our GeoJSON data.
-d3.json(airportData).then(function(data) {
+d3.json(torontoData).then(function(data) {
   console.log(data);
+// Variable for yellow line color per 13.5.5 Skill Drill 
+var myStyle = {
+  "color": "#FFFDBD",
+  "weight": 2,
+  "opacity": 0.50
+};
 // Creating a GeoJSON layer with the retrieved data.
-L.geoJson(data, {
-  onEachFeature: function(feature, layer) {
-    layer.bindPopup("<h2> Airport code: " + feature.properties.faa + "</h2> <hr> <h3> Airport name: " + feature.properties.name + "</h3>");
-    }
+L.geoJson(data,{
+  style: myStyle
 }).addTo(map);
 });
