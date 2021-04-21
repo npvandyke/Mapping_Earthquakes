@@ -91,7 +91,7 @@ let baseMaps = {
 let map = L.map('mapid', {
   center: [43.7, -79.3],
   zoom: 11,
-  layers: [satelliteStreets]
+  layers: [streets]
 })
 
 // Pass our map layers into our layers control and add the layers control to the map.
@@ -104,19 +104,27 @@ L.control.layers(baseMaps).addTo(map);
 //let torontoData = "https://raw.githubusercontent.com/npvandyke/Mapping_Earthquakes/main/torontoRoutes.json";;
 
 // Accessing the Toronto neighborhoods GeoJSON URL.
-let torontoHoods = "https://raw.githubusercontent.com/<GitHub_name>/Mapping_Earthquakes/main/torontoNeighborhoods.json";
+let torontoHoods = "https://raw.githubusercontent.com/npvandyke/Mapping_Earthquakes/main/torontoNeighborhoods.json";
 
 // Grabbing our GeoJSON data.
-d3.json(torontoData).then(function(data) {
+d3.json(torontoHoods).then(function(data) {
   console.log(data);
 // Variable for yellow line color per 13.5.5 Skill Drill 
+// var myStyle = {
+//   "color": "#FFFDBD",
+//   "weight": 2,
+//   "opacity": 0.50
+// };
+// Variable for style per 13.5.6 Skill Drill 
 var myStyle = {
-  "color": "#FFFDBD",
-  "weight": 2,
-  "opacity": 0.50
-};
+  "weight": 1, 
+  "fillColor": "yellow"
+}
 // Creating a GeoJSON layer with the retrieved data.
-L.geoJson(data,{
-  style: myStyle
-}).addTo(map);
+  L.geoJson(data,{
+    style: myStyle,
+    onEachFeature: function (feature, layer) {
+      layer.bindPopup(feature.properties.AREA_NAME)
+    } 
+  }).addTo(map);
 });
