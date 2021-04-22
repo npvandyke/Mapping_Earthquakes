@@ -98,35 +98,31 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
   // Creating the earthquake layer for the map 
     earthquakes.addTo(map);
   
-  // Here we create a legend control object.
-let legend = L.control({
-  position: "bottomright"
-});
+  // Create a legend control object. 
+  var legend = L.control({position: 'bottomright'});
+  // Add all the details for the legend. 
+  legend.onAdd = function () {
 
-// Then add all the details for the legend
-legend.onAdd = function() {
-  let div = L.DomUtil.create("div", "info legend");
+      var div = L.DomUtil.create('div', 'info legend');
+          const magnitudes = [0,1,2,3,4,5];
+          const colors = [
+            "#98ee00",
+            "#d4ee00",
+            "#eecc00",
+            "#ee9c00",
+            "#ea822c",
+            "#ea2c2c"];
 
-  const magnitudes = [0, 1, 2, 3, 4, 5];
-  const colors = [
-    "#98ee00",
-    "#d4ee00",
-    "#eecc00",
-    "#ee9c00",
-    "#ea822c",
-    "#ea2c2c"
-  ];
+      // loop through our density intervals and generate a label with a colored square for each interval
+      for (var i = 0; i < magnitudes.length; i++) {
+        console.log(colors[i]);
+        div.innerHTML +=
+          '<i style="background: ' + colors[i] + '"></i> ' +
+          magnitudes[i] + (magnitudes[i + 1] ? '&ndash;' + magnitudes[i + 1] + '<br>' : '+');
+      }
 
-// Looping through our intervals to generate a label with a colored square for each interval.
-  for (var i = 0; i < magnitudes.length; i++) {
-    console.log(colors[i]);
-    div.innerHTML +=
-      "<i style='background: " + colors[i] + "'></i> " +
-      magnitudes[i] + (magnitudes[i + 1] ? "&ndash;" + magnitudes[i + 1] + "<br>" : "+");
-    }
-    return div;
-  };
+      return div;
+    };
 
-  // Finally, we our legend to the map.
   legend.addTo(map);
 });
