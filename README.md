@@ -11,8 +11,11 @@ The maps also contain switchable base layers for a daytime, nighttime, or naviga
 ## Tools:  
 - Software: Visual Studio Code, HTML/CSS and JavaScript 
 - Dependencies: Leaflet and D3 
-- API Sources: 
-- Retrieved Data Sources: 
+- API Sources: Mapbox.com and usgs.gov
+- Retrieved GeoJSON data: 
+  - [all earthquakes over a seven day timeframe](https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson)
+  - [major earthquakes over a seven day timeframe](https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson)
+  - [tectonic plate data](https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json)
 
 ## Link to interactive map:
 The interactive map is accessable through [this webpage.](https://npvandyke.github.io/Mapping_Earthquakes/) 
