@@ -17,7 +17,7 @@ The maps also contain switchable base layers for a daytime, nighttime, or naviga
 ## Link to interactive map:
 The interactive map is accessable through [this webpage.](https://npvandyke.github.io/Mapping_Earthquakes/) 
 
-![satellite map view](EarthquakeNight.png)](https://npvandyke.github.io/Mapping_Earthquakes/)
+[![satellite map view](EarthquakeNight.png)](https://npvandyke.github.io/Mapping_Earthquakes/)
 
 
 Questions? Comments? [Let's Connect!](https://www.linkedin.com/in/natalie-vandyke-npv/) ![](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)
