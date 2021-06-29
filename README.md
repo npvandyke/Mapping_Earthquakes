@@ -2,11 +2,17 @@
 Traversing and retrieving GeoJSON data on earthquakes and tectonic plates from the US Geological Survey website using JavaScript and D3 and Leaflet libraries, and plotting the data on a Mapbox map through an API request.  
 
 ## Project Overview: 
+The purpose of this project was to create an interactive map displaying global data on tectonic plates and earthquake activity from within a seven day timeframe. The map allows the user to explore the relationship between fault line locations and earthquake activity. 
+
+The tectonic plate fault lines are displayed as a removable tile layer on the map. Two additional tile layers include "Earthquakes" and "Major Earthquakes", which both display circle markers on the map marking the location of earthquake activity within the retrieved seven day timeframe. The markers' radius and color correspond to the magnitude of the earthquake, with the "Earthquakes" tile layer displaying all earthquake activity and the "Major Earthquakes" tile layer displaying only earthquake activity of a 4.5 magnitude or greater. Clicking on any of the circle markers displays data related to the size and exact location of the earthquake. 
+
+The maps also contain switchable base layers for a daytime, nighttime, or navigation-based view of the map. 
 
 ## Tools:  
-- Software:
-- Dependencies: 
-- API Data Sources: 
+- Software: Visual Studio Code, HTML/CSS and JavaScript 
+- Dependencies: Leaflet and D3 
+- API Sources: 
+- Retrieved Data Sources: 
 
 ## Link to interactive map:
 The interactive map is accessable through [this webpage.](https://npvandyke.github.io/Mapping_Earthquakes/) 
