@@ -9,8 +9,8 @@ The tectonic plate fault lines are displayed as a removable tile layer on the ma
 The maps also contain switchable base layers for a daytime, nighttime, or navigation-based view of the map. 
 
 ## Tools:  
-- Software: Visual Studio Code, HTML/CSS and JavaScript 
-- Dependencies: Leaflet and D3 
+- Software: Visual Studio Code
+- Languages/Dependencies: HTML/CSS, JavaScript, D3.js and Leaflet 
 - API Sources: Mapbox.com and usgs.gov
 - Retrieved GeoJSON data: 
   - [all earthquakes over a seven day timeframe](https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson)
